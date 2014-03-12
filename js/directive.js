@@ -132,7 +132,7 @@ directive("myTabs",function(){
 				panes.push(pane);
 			};
 		},
-		templateUrl: "/html/my_tab.html"
+		templateUrl: "my_tab.html"
 	};
 }).
 directive("myPane",function(){
@@ -146,7 +146,7 @@ directive("myPane",function(){
 		link: function (scope,element,attrs,tabsCtrl){
 			tabsCtrl.addPane(scope);
 		},
-		templateUrl:'/html/my_pane.html'
+		templateUrl:'my_pane.html'
 	};
 });
 

@@ -51,7 +51,7 @@
 				</div>
 				<div class="row" >
 					<my-tabs>
-						<my-pane title="hello">
+						<my-pane id="1" title="hello">
 							<h5>Hello</h5>
 							<p>first</p>
 						</my-pane>
@@ -73,5 +73,19 @@
 		<script src="js/app.js"></script>
 		<script src="js/directive.js"></script>
 		<script src="js/controller.js"></script>
+		<script type="text/ng-template" id="my_pane.html">
+  			<div class="tab-pane" ng-show="selected" ng-transclude>
+			</div>
+		</script>
+		<script type="text/ng-template" id="my_tab.html">
+  			<div class="tabbable">
+  				<ul class="nav nav-tabs">
+    				<li ng-repeat="pane in panes" ng-class="{active:pane.selected}">
+      					<a href="" ng-click="select(pane)">{{pane.title}}</a>
+    				</li>
+  				</ul>
+  				<div class="tab-content" ng-transclude></div>
+			</div>
+		</script>
 	</body>
 </html>
