@@ -108,11 +108,45 @@ directive("myDraggable",["$document",function($document){
 			$document.unbind("mousemove",mousemove);
 			$document.unbind("mouseup",mouseup);
 		}
-
-
-
-
-
 	}
-}]);
+}]).
+directive("myTabs",function(){
+	return {
+		restrict:"E",
+		transclude:true,
+		scope:{},
+		controller:function($scope){
+			var panes = $scope.panes = [];
+
+			$scope.select = function(pane) {
+				angular.forEach(panes,function(pane){
+					pane.selected=false;
+				});
+				pane.selected = true;
+			};
+
+			this.addPane = function(pane){
+				if(panes.length == 0){
+					$scope.select(pane);
+				}
+				panes.push(pane);
+			};
+		},
+		templateUrl: "/html/my_tab.html"
+	};
+}).
+directive("myPane",function(){
+	return {
+		require:"^myTabs",
+		restrict:"E",
+		transclude:true,
+		scope:{
+			title:"@"
+		},
+		link: function (scope,element,attrs,tabsCtrl){
+			tabsCtrl.addPane(scope);
+		},
+		templateUrl:'/html/my_pane.html'
+	};
+});
 
