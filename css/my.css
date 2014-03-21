@@ -1,0 +1,38 @@
+.container{
+	max-width: 1025px;
+}
+.panel{
+	background: hsla(0,0%，100%，1);
+	margin-bottom: 8px;
+	box-shadow: 0px 0px 1px #aaaaaa;
+}
+#content{
+	position: absolute;
+	padding:0;
+	float:left;
+}
+.header{
+	padding:7px 10px;
+	background-color: #E7E3E3;
+}
+#sidebar{
+	float:right;
+	font-size:14px;
+}
+#wrapper{
+	width:1060px;
+	margin:0px auto;
+	padding:0px 0px 30px 0px;
+	min-height: 400px;
+	position: relative;
+}
+.left{
+	position: absolute;
+	padding:0;
+	float:left;
+}
+.right{
+	position: absolute;
+	padding:0;
+	float:right;
+}
