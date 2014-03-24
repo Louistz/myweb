@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>客运服务质量评测系统</title>
+		<meta name="viewport" conten="width=device-width,initial-scale=1.0" charset="utf-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/my.css" rel="stylesheet" >
+	</head>
+	<body>
+		
+		<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="pagination">
+				<ul>
+					<li ng-class="{disabled:currentPage==0}">
+						<a href ng-click="prevPage()">« Prev</a>
+					</li>
+					<li ng-repeat="n in range(pagedItems.length,currentPage,currentPage+prePageSize)"
+						ng-class="{active:n==currentPage}"
+						ng-click="setPage()">
+						<a href ng-bind="n+1">1</a>
+					</li>
+					<li ng-class="{disabled:currentPage ==(pagedItems.length-1)}">
+						<a href ng-click="nextPage()">Next »</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+		<script src="js/lib/jquery-1.11.0.min.js"></script>
+		<script src="js/lib/bootstrap.min.js"></script>
+		<script src="js/lib/angular.min.js"></script>
+	</body>
+</html>

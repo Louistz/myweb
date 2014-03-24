@@ -1,1 +1,1 @@
-angular.module("app",["app.directive","app.controller"]);
+angular.module("app",["app.directive","app.controller","app.filter"]);
